@@ -1,0 +1,35 @@
+
+.list-group-item {
+  background-color:rgba(0, 0, 0,0.2);
+}
+
+.selectButton{
+  padding-left: 100px !important;
+}
+
+.card {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+
+
+:host ::ng-deep .geek {
+
+  background-color: transparent;
+
+
+}
+
+
+// :host ::ng-deep .p-splitbutton .p-button {
+//   boborder-top-left-radius: 6px;
+//   border-top-right-radius: 6px;
+//   border-bottom-right-radius: 6px;
+//   border-bottom-left-radius: 6px;
+// }
+
+// adjusts font, color and other elements of the toast window if needed
+
