@@ -21,6 +21,7 @@
     "@angular/router": "^18.1.0",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0-rc.2",
     "angular-highcharts": "^17.0.1",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "highcharts": "^11.4.7",
     "lottie-web": "^5.12.2",

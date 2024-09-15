@@ -1,9 +1,12 @@
-
 .list-group-item {
-  background-color:rgba(0, 0, 0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border-radius: 10px,;
+  padding: 5px;
+  padd-bottom: 5px;
 }
 
-.selectButton{
+.selectButton {
   padding-left: 100px !important;
 }
 
@@ -14,21 +17,14 @@
   margin-bottom: 1rem;
 }
 
-
-
 :host ::ng-deep .geek {
-
   background-color: transparent;
-
-
 }
 
 .list-group-item.active {
-  color: #ff0000; /* Change this to your desired color */
+  color: #000000; /* Change this to your desired color */
+  background-color: #ffffff;
 }
-
-
-
 
 // :host ::ng-deep .p-splitbutton .p-button {
 //   boborder-top-left-radius: 6px;
@@ -38,4 +34,3 @@
 // }
 
 // adjusts font, color and other elements of the toast window if needed
-

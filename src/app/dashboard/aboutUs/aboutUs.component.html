@@ -1,3 +1,14 @@
-<p>
-  aboutUs works!
-</p>
+<p>aboutUs works!</p>
+
+<div *ngIf="data?.length > 0 ; else noData">
+  <ul>
+    <li *ngFor="let item of data">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noData>
+  <p>No data available.</p>
+</ng-template>

@@ -11,6 +11,8 @@ import { ButtonModule } from 'primeng/button'; // buttons and charts in Dashboar
 import { SliderModule } from 'primeng/slider';
 import { DashboardsRoutingModule } from './dashboard-routing.module';
 import { WebsiteComponent } from './Website/Website.component';
+import { AboutUsComponent } from './aboutUs/aboutUs.component';
+
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { WebsiteComponent } from './Website/Website.component';
     ChartModule,
     ButtonModule,
   ],
-  declarations: [DashboardComponent, WebsiteComponent],
+  declarations: [DashboardComponent, WebsiteComponent, AboutUsComponent],
   providers: []
 })
 export class DashboardModule { }
