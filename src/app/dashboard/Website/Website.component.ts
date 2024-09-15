@@ -1,12 +1,7 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { ButtonModule } from 'primeng/button';
 import { MenuItem, MessageService } from 'primeng/api';
-import { OnInit } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 import { AnimationItem } from 'lottie-web';
 import { LottieComponent, AnimationOptions } from 'ngx-lottie';
@@ -14,30 +9,44 @@ import player from 'lottie-web';
 import { provideLottieOptions } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
-  providers: [MessageService, provideLottieOptions({
-    player: () => player,
-  }),],
+  selector: 'app-Website',
+  templateUrl: './Website.component.html',
+  styleUrls: ['./Website.component.scss'],
+  providers: [
+    MessageService,
+    provideLottieOptions({
+      player: () => player,
+    }),
+  ],
 })
-export class DashboardComponent {
-  private animationItem: AnimationItem | undefined;
+export class WebsiteComponent implements OnInit {
+  x = 1;
 
+  handleClick() {
+    console.log(this.x);
+    this.x = this.x === 1 ? 2 : 1; // Toggle between 1 and 2
+    this.initializeChart()
+  }
+
+  private animationItem: AnimationItem | undefined;
+  items: MegaMenuItem[] | undefined;
   options: AnimationOptions = {
     path: '/assets/lotti.json',
     loop: true,
-    autoplay: true
+    autoplay: true,
   };
 
   animationCreated(animationItem: AnimationItem): void {
-    console.log("here" + animationItem);
+    console.log('here' + animationItem);
     this.animationItem = animationItem;
   }
 
   split_items: MenuItem[];
 
-  constructor(private messageService: MessageService) {
+  constructor(
+    private ref: ChangeDetectorRef,
+    private messageService: MessageService
+  ) {
     this.split_items = [
       {
         label: 'Update',
@@ -54,10 +63,10 @@ export class DashboardComponent {
       { label: 'Angular Website', url: 'http://angular.io' },
       { separator: true },
       { label: 'Upload', routerLink: ['/fileupload'] },
+
+      this.ref.detectChanges,
     ];
   }
-
-  items: MegaMenuItem[] | undefined;
 
   ngOnInit() {
     this.items = [
@@ -98,6 +107,59 @@ export class DashboardComponent {
       },
     ];
   }
+
+  initializeChart() {
+    this.pieChart_Balance = new Chart({
+      chart: {
+        type: 'pie',
+        plotShadow: false,
+        backgroundColor: 'rgba(0, 0, 4, 0.0)',
+      },
+
+      credits: {
+        enabled: false,
+      },
+
+      plotOptions: {
+        pie: {
+          animation: false,
+          innerSize: '99%',
+          borderWidth: 15,
+          borderColor: '',
+          dataLabels: {
+            connectorWidth: 0,
+            enabled: false,
+          },
+        },
+      },
+
+      title: {
+        verticalAlign: 'middle',
+        floating: false,
+        text: 'Balance',
+        style: { color: '#fff' },
+      },
+
+      legend: {
+        enabled: false,
+      },
+
+      series: [
+        {
+          type: 'pie',
+          data: [
+            { y: 1, color: '#eeeeee' },
+
+            { y: 2, color: '#393e46' },
+
+            { y: 3, color: '#00adb5' },
+            { y: 4, color: '#eeeeee' },
+            { y: 5, color: '#506ef9' },
+          ],
+        },
+      ]
+  })
+}
 
   save(severity: string) {
     this.messageService.add({
@@ -148,6 +210,7 @@ export class DashboardComponent {
     chart: {
       type: 'pie',
       plotShadow: false,
+
       backgroundColor: 'rgba(0, 0, 4, 0.4)',
     },
 
@@ -189,6 +252,57 @@ export class DashboardComponent {
           { name: 'EBOLA', y: 3, color: '#00adb5' },
           { name: 'DISPORA', y: 4, color: '#eeeeee' },
           { name: 'DIABETES', y: 5, color: '#506ef9' },
+        ],
+      },
+    ],
+  });
+
+  pieChart_Balance = new Chart({
+    chart: {
+      type: 'pie',
+      plotShadow: false,
+      backgroundColor: 'rgba(0, 0, 4, 0.0)',
+    },
+
+    credits: {
+      enabled: false,
+    },
+
+    plotOptions: {
+      pie: {
+        animation: false,
+        innerSize: '80%',
+        borderWidth: 20,
+        borderColor: '',
+        dataLabels: {
+          connectorWidth: 0,
+          enabled: false,
+        },
+      },
+    },
+
+    title: {
+      verticalAlign: 'middle',
+      floating: false,
+      text: 'Balance',
+      style: { color: '#fff' },
+    },
+
+    legend: {
+      enabled: false,
+    },
+
+    series: [
+      {
+        type: 'pie',
+        data: [
+          { y: 1, color: '#eeeeee' },
+
+          { y: 2, color: '#393e46' },
+
+          { y: 3, color: '#00adb5' },
+          { y: 4, color: '#eeeeee' },
+          { y: 5, color: '#506ef9' },
         ],
       },
     ],

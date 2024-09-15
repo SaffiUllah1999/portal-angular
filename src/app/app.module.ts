@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideLottieOptions } from 'ngx-lottie';
-
+// import { ComponentDashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { provideLottieOptions } from 'ngx-lottie';
     FormsModule,
     RouterModule,
     BrowserAnimationsModule,
+
   ],
   providers: [
 

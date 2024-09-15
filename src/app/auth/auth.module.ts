@@ -5,7 +5,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './Login/Login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'angular-highcharts';
 import { ButtonModule } from 'primeng/button'; // buttons and charts in Dashboard
 import { SliderModule } from 'primeng/slider';
@@ -18,9 +17,8 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { AvatarModule } from 'primeng/avatar';
 import { LottieComponent } from 'ngx-lottie';
 
-
 @NgModule({
-  declarations: [LoginComponent, RegistrationComponent, DashboardComponent],
+  declarations: [LoginComponent, RegistrationComponent],
   imports: [
     LottieComponent,
     CommonModule,
@@ -34,7 +32,8 @@ import { LottieComponent } from 'ngx-lottie';
     AvatarModule,
     SelectButtonModule,
     SplitButtonModule,
-    ToastModule,
+    ToastModule
   ],
 })
+
 export class AuthModule {}

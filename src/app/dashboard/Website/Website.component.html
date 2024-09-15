@@ -1,0 +1,39 @@
+<div>
+  <div class="row">
+    <div class="col-4" style="height: 100vh">
+      <div class="row-3" style="height: 40vh; margin-bottom: 15px" [chart]="pieChart"></div>
+      <div class="row-4" style="height: 40vh" [chart]="lineChart"></div>
+    </div>
+
+    <div class="col-8">
+      <p-toast />
+
+      <!-- Lottie Animation Container -->
+      <div class="card justify-content-center">
+        <p-splitButton
+          label="Save"
+          (onClick)="save('info')"
+          [model]="split_items"
+          styleClass="geek"
+        />
+
+        <div >
+          <div (click)="handleClick()" *ngIf="x === 1" class="container">
+            <h5 class="centered-text">Show Balance</h5>
+            <ng-lottie height="40vh" [options]="options" class="lottie-animation"></ng-lottie>
+
+          </div>
+
+        <div *ngIf="x === 2">
+          <!-- Circle -->
+          <div (click)="handleClick()">
+            <div style="height: 40vh" [chart]="pieChart_Balance"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+</div>

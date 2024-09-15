@@ -23,6 +23,12 @@
 
 }
 
+.list-group-item.active {
+  color: #ff0000; /* Change this to your desired color */
+}
+
+
+
 
 // :host ::ng-deep .p-splitbutton .p-button {
 //   boborder-top-left-radius: 6px;
