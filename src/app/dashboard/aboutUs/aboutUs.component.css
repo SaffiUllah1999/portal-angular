@@ -1,0 +1,23 @@
+.list {
+  max-height: 400px; /* Adjust the height as needed */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  padding: 10px; /* Optional: Add padding inside the container *//* Optional: Add a background color */
+  width: auto;
+}
+
+ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  margin-bottom: 10px; /* Add space between items */
+  padding: 10px; /* Add padding to each item *//* Add a bottom border to each item */
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: rgba(255, 251, 251, 0.5);
+}
+
+h3 {
+  margin-top: 0; /* Remove top margin from heading */
+}
